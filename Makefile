@@ -44,9 +44,11 @@ OBJS += ${foreach src, $(notdir $(SRCS)), ${patsubst %.$(TYPE), $(OBJ_DIR)/%.o, 
 
 vpath %.$(TYPE) $(sort $(dir $(SRCS)))
 
-run : $(TARGET)
+all : $(TARGET)
 	@echo "Builded target:" $^
 	@echo "Done.\n\n"
+
+run : all
 	@./pro
 
 $(TARGET) : $(OBJS)

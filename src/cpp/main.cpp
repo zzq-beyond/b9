@@ -12,26 +12,28 @@ int main(int argc, const char* argv[])
     namespace bfs = boost::filesystem;
     
     // 检查输入
-    // if (argc < 2)
-    // {
-    //     std::cout << "The arguments, passed to, are not enough.\n";
-    //     std::exit(1);
-    // }
-    // if (!bfs::exists(argv[1]))
-    // {
-    //     std::cout << "The input path, \"" << argv[1] << "\" does not exist.\n";
-    //     std::exit(1);
-    // }
-    bfs::path test_img_path("images");
+    if (argc < 2)
+    {
+        std::cout << "The arguments, passed to, are not enough.\n";
+        std::exit(1);
+    }
+    if (!bfs::exists(argv[1]))
+    {
+        std::cout << "The input path, \"" << argv[1] << "\" does not exist.\n";
+        std::exit(1);
+    }
+    bfs::path test_img_path = argv[1];
 
     // 创建目录用于保持推理结果
     bfs::path results_ok_path("./results/ok");
     bfs::path results_ng_path("./results/ng");
+    bfs::path temp_path("./temp");
     if (!bfs::exists(results_ok_path))
         bfs::create_directories(results_ok_path);
     if (!bfs::exists(results_ng_path))
         bfs::create_directories(results_ng_path);
-
+    if (!bfs::exists(temp_path))
+        bfs::create_directories(temp_path);
     // 获取所有图片路径
     std::vector<std::string> all_images;
     if (bfs::is_directory(test_img_path))
@@ -46,7 +48,7 @@ int main(int argc, const char* argv[])
     else
         all_images.push_back(test_img_path.string());
     
-    GlassSurfaceDetector detector("11.json");
+    GlassSurfaceDetector detector("./GK2/11.json");
 
     // 对所有图片进行检测
     std::vector<size_t> elapsed;
@@ -55,7 +57,7 @@ int main(int argc, const char* argv[])
         auto start = std::chrono::high_resolution_clock::now();
         
         cv::Mat img_in;
-        img_in = cv::imread(img_f);
+        img_in = cv::imread(img_f, 0);
 
         cv::Mat img_out;
         DefectData results;

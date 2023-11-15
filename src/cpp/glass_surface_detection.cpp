@@ -340,7 +340,7 @@ GlassSurfaceDetector::GlassSurfaceDetector(const std::string& config_file)
                     else if (key == POLARITY_NG_RATIO_KEY && kind == t_double)
                         m_polarity_ng_ratio = jvv.get_double();
                 } // end for
-                std::cout << "reading config..." << std::endl;
+                // std::cout << "reading config..." << std::endl;
             } // end if obj
         } // end if kind
     } // end if file
@@ -358,40 +358,40 @@ GlassSurfaceDetector::GlassSurfaceDetector(const std::string& config_file)
     std::string model_path = "/home/zzq/b9/models/model.xml";
     m_model = init_model(model_path);
 
-    // 打印参数，用于确认
-    // std::cout << "*****************************************\n";
-    // std::cout << "is_glass_edge = [" << m_is_glass_edge << "]\n";
-    // std::cout << "image_bg_path = [" << m_img_bg_path << "]\n";
-    // std::cout << "diff_type = [" << m_diff_type << "]\n";
-    // std::cout << "gamma_value = [" << m_gamma_value << "]\n";
-    // std::cout << "diff_thresh = [" << m_diff_thresh << "]\n";
-    // std::cout << "diff_dilate_iters = [" << m_diff_dilate_iters << "]\n";
-    // std::cout << "glass_bin_thresh = [" << m_glass_bin_thresh << "]\n";
-    // std::cout << "edges_bin_thresh = [" << m_edges_bin_thresh << "]\n";
-    // std::cout << "hough_thresh = [" << m_hough_thresh << "]\n";
-    // std::cout << "hough_min_line_len = [" << m_hough_min_line_len << "]\n";
-    // std::cout << "hough_max_line_gap = [" << m_hough_max_line_gap << "]\n";
-    // std::cout << "line_max_included_angle = [" << m_line_max_included_angle << "]\n";
-    // std::cout << "min_glass_area = [" << m_min_glass_area << "]\n\n";
+    //打印参数，用于确认
+    std::cout << "*****************************************\n";
+    std::cout << "is_glass_edge = [" << m_is_glass_edge << "]\n";
+    std::cout << "image_bg_path = [" << m_img_bg_path << "]\n";
+    std::cout << "diff_type = [" << m_diff_type << "]\n";
+    std::cout << "gamma_value = [" << m_gamma_value << "]\n";
+    std::cout << "diff_thresh = [" << m_diff_thresh << "]\n";
+    std::cout << "diff_dilate_iters = [" << m_diff_dilate_iters << "]\n";
+    std::cout << "glass_bin_thresh = [" << m_glass_bin_thresh << "]\n";
+    std::cout << "edges_bin_thresh = [" << m_edges_bin_thresh << "]\n";
+    std::cout << "hough_thresh = [" << m_hough_thresh << "]\n";
+    std::cout << "hough_min_line_len = [" << m_hough_min_line_len << "]\n";
+    std::cout << "hough_max_line_gap = [" << m_hough_max_line_gap << "]\n";
+    std::cout << "line_max_included_angle = [" << m_line_max_included_angle << "]\n";
+    std::cout << "min_glass_area = [" << m_min_glass_area << "]\n\n";
 
-    // std::cout << "adapt_ksize = [" << m_adapt_ksize << "]\n";
-    // std::cout << "adapt_const = [" << m_adapt_const << "]\n";
-    // std::cout << "min_warn_defect_rect_width = [" << m_min_warn_defect_rect_width << "]\n";
-    // std::cout << "min_warn_defect_rect_height = [" << m_min_warn_defect_rect_height << "]\n";
-    // std::cout << "min_warn_defect_area = [" << m_min_warn_defect_area << "]\n";
-    // std::cout << "min_fatal_defect_rect_width = [" << m_min_fatal_defect_rect_width << "]\n";
-    // std::cout << "min_fatal_defect_rect_height = [" << m_min_fatal_defect_rect_height << "]\n";
-    // std::cout << "min_fatal_defect_area = [" << m_min_fatal_defect_area << "]\n";
-    // std::cout << "max_defect_count = [" << m_max_defect_count << "]\n\n";
+    std::cout << "adapt_ksize = [" << m_adapt_ksize << "]\n";
+    std::cout << "adapt_const = [" << m_adapt_const << "]\n";
+    std::cout << "min_warn_defect_rect_width = [" << m_min_warn_defect_rect_width << "]\n";
+    std::cout << "min_warn_defect_rect_height = [" << m_min_warn_defect_rect_height << "]\n";
+    std::cout << "min_warn_defect_area = [" << m_min_warn_defect_area << "]\n";
+    std::cout << "min_fatal_defect_rect_width = [" << m_min_fatal_defect_rect_width << "]\n";
+    std::cout << "min_fatal_defect_rect_height = [" << m_min_fatal_defect_rect_height << "]\n";
+    std::cout << "min_fatal_defect_area = [" << m_min_fatal_defect_area << "]\n";
+    std::cout << "max_defect_count = [" << m_max_defect_count << "]\n\n";
 
-    // std::cout << "polarity_detection = [" << m_polarity_detection << "]\n";
-    // std::cout << "has_polarity = [" << m_has_polarity << "]\n";
-    // std::cout << "polarity_min_hlen = [" << m_polarity_min_hlen << "]\n";
-    // std::cout << "polarity_max_hlen = [" << m_polarity_max_hlen << "]\n";
-    // std::cout << "polarity_min_vlen = [" << m_polarity_min_vlen << "]\n";
-    // std::cout << "polarity_max_vlen = [" << m_polarity_max_vlen << "]\n";
-    // std::cout << "polarity_ng_ratio = [" << m_polarity_ng_ratio << "]\n";
-    // std::cout << "*****************************************\n";
+    std::cout << "polarity_detection = [" << m_polarity_detection << "]\n";
+    std::cout << "has_polarity = [" << m_has_polarity << "]\n";
+    std::cout << "polarity_min_hlen = [" << m_polarity_min_hlen << "]\n";
+    std::cout << "polarity_max_hlen = [" << m_polarity_max_hlen << "]\n";
+    std::cout << "polarity_min_vlen = [" << m_polarity_min_vlen << "]\n";
+    std::cout << "polarity_max_vlen = [" << m_polarity_max_vlen << "]\n";
+    std::cout << "polarity_ng_ratio = [" << m_polarity_ng_ratio << "]\n";
+    std::cout << "*****************************************\n";
 
 }
 
@@ -424,7 +424,7 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
     cv::normalize(no_bg, no_bg, 0, 255, cv::NORM_MINMAX);
     cv::imwrite("/home/zzq/b9/temp/03.jpg", no_bg);
     cv::LUT(no_bg, m_look_up_table, no_bg_lut); //no_bg_lut是比较关键的一个环节
-    cv::imwrite("/home/zzq/b9/temp/04.jpg", no_bg_lut);
+    // cv::imwrite("/home/zzq/b9/temp/no_bg_lut.jpg", no_bg_lut);
     
     // 找寻玻璃区域：最大亮区域
     cv::dilate(no_bg_lut, no_bg, cv::noArray(), cv::Point(-1, -1), m_diff_dilate_iters);
@@ -432,7 +432,7 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
     cv::threshold(no_bg, no_bg, m_glass_bin_thresh, 255, cv::THRESH_BINARY);
     cv::imwrite("/home/zzq/b9/temp/06.jpg", no_bg);
     cv::erode(no_bg, no_bg, cv::noArray(), cv::Point(-1, -1), m_diff_dilate_iters);
-    cv::imwrite("/home/zzq/b9/temp/07.jpg", no_bg);
+    cv::imwrite("/home/zzq/b9/temp/before_find_contour_glass.jpg", no_bg);
     CONTOURS_TYPE contours; //vector< vector<cv::Point> >
 
     cv::findContours(no_bg, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
@@ -452,11 +452,12 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
         vec_max_cnt.push_back(max_cnt);
         cv::drawContours(mask_out, vec_max_cnt, -1, cv::Scalar(255), -1);
         cv::drawContours(mask_out, vec_max_cnt, -1, cv::Scalar(255), 2); //查看轮廓
-        cv::imwrite("/home/zzq/b9/temp/08.jpg", mask_out);
+        cv::imwrite("/home/zzq/b9/temp/mask_out_before_h_and_v.jpg", mask_out);
+        // cv::erode(mask_out, mask_out, cv::noArray(), cv::Point(-1,-1), 7);
 
         // 凸显玻璃边缘区域
         cv::Mat edges, edges_v;
-        // cv::imwrite("/home/zzq/b9/temp/09.jpg", no_bg_lut);
+        cv::imwrite("/home/zzq/b9/temp/no_bg_lut.jpg", no_bg_lut);
         cv::threshold(no_bg_lut, edges, m_edges_bin_thresh, 255, cv::THRESH_BINARY);
         cv::imwrite("/home/zzq/b9/temp/edges.jpg",edges);
         edges.copyTo(edges_v);
@@ -498,7 +499,6 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
         cv::Mat mask_best_hline = cv::Mat::zeros(gray_in.size(), CV_8UC1); // 用于角检分析
         if (nonzeros_h.size().height > 1024) // 统计非零点的个数
         {   
-            std::cout << "111" << std::endl;
             cv::Vec4f obj_line;
             cv::fitLine(nonzeros_h, obj_line, cv::DIST_HUBER, 0.0, 0.01, 0.01);
             double k = obj_line[1] / (obj_line[0] + EPSILON);
@@ -514,7 +514,8 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
                 // std::cout << x2 << "===";
                 y1 = int(k * x1 + b);
                 y2 = int(k * x2 + b);
-                cv::line(mask_out, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0), 32);
+                //在mask_glass_roi上要把edges里面的横线抹掉，mask_glass_roi就是下面的mask_out
+                cv::line(mask_out, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0), 64);
                 cv::line(img_out, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(255,0,0), 3);
                 cv::line(mask_best_hline, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(255), 3);
                 // cv::imwrite("/home/zzq/b9/temp/13.jpg", mask_out);
@@ -529,7 +530,7 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
                 // 由于竖直方向上，玻璃容易出现左右偏摆，hough直线很可能检测不到直线
                 // 过滤掉水平向直线
                 cv::line(edges_v, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0), 64);
-                // cv::imwrite("/home/zzq/b9/temp/16.jpg", edges_v);
+                cv::imwrite("/home/zzq/b9/temp/filter_h_line.jpg", edges_v);
 
             }
         }
@@ -551,7 +552,6 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
             {
                 cv::Vec4f obj_line;
                 cv::fitLine(nonzeros_v, obj_line, cv::DIST_HUBER, 0.0, 0.01, 0.01);
-                // std::cout<< obj_line[0] << " " << obj_line[1] << " "<< obj_line[2] << " "<< obj_line[3] << " " << std::endl;
                 double k = obj_line[1] / (obj_line[0] + EPSILON);
                 double b = obj_line[3] - k * obj_line[2];
                 double degree = std::atan(k) * Rad2Deg;
@@ -565,7 +565,8 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
                     y2 = gray_in.size().height - 1;
                     x1 = int((y1 - b) / (k + EPSILON));
                     x2 = int((y2 - b) / (k + EPSILON));
-                    cv::line(mask_out, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0), 32);
+                    //在mask_glass_roi上要把edges里面的竖线抹掉，mask_glass_roi就是下面的mask_out
+                    cv::line(mask_out, cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(0), 64);
                     // cv::imwrite("/home/zzq/b9/temp/16-2.jpg", mask_out);
                     cv::line(img_out,  cv::Point(x1, y1), cv::Point(x2, y2), cv::Scalar(255,0,0), 3);
                     // cv::imwrite("/home/zzq/b9/temp/16-3.jpg", img_out);
@@ -595,7 +596,7 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
 
             // NOTE：边检相机排除倒角的影响
             cv::circle(mask_out, cv::Point(ix, iy), 150, cv::Scalar(0, 255, 255), -1);
-            // cv::imwrite("/home/zzq/b9/temp/17.jpg", mask_out);
+            cv::imwrite("/home/zzq/b9/temp/mask_out.jpg", mask_out);
             // 如果需要角检（必定是边检相机）
             if (m_polarity_detection && valid)
             {
@@ -698,21 +699,24 @@ GlassSurfaceDetector::detect_glass(const cv::Mat& gray_in, cv::Mat& mask_out,
                     (is_polarity_ok ? green : red), 5.0);
             }
         }
-    }
+        // if (nonzeros_h.size() > 20000){
 
+        // }
+    }
+    
     return ret;
 }
 
 DefectData
-GlassSurfaceDetector::detect(const cv::Mat& img_in, cv::Mat& img_out)
+GlassSurfaceDetector::detect(const cv::Mat& img_gray, cv::Mat& img_out)
 {    
     // 缺陷检测结果
     DefectData results;
-    img_in.copyTo(img_out); 
+    cv::cvtColor(img_gray, img_out, cv::COLOR_GRAY2BGR);
     
     // 转为灰度图
-    cv::Mat img_gray;
-    cv::cvtColor(img_in, img_gray, cv::COLOR_BGR2GRAY);
+    
+    // cv::cvtColor(img_in, img_gray, cv::COLOR_BGR2GRAY);
     if (m_img_bg.empty())
     {
         std::cout << "[ Warning ] No background image was found. "
@@ -725,7 +729,7 @@ GlassSurfaceDetector::detect(const cv::Mat& img_in, cv::Mat& img_out)
     bool is_polarity_ok = true;
     bool ret = detect_glass(img_gray, mask_glass_roi, img_out, is_polarity_ok);//检测玻璃函数
     // img_gray.copyTo(img_out, mask_glass_roi);
-    cv::imwrite("/home/zzq/b9/temp/18.jpg", mask_glass_roi);
+    cv::imwrite("/home/zzq/b9/temp/mask_glass_roi.jpg", mask_glass_roi);
     if (!ret) return results;
     results.is_polarity_ok = is_polarity_ok;
     // -------------------------------------------------------------- //
@@ -735,10 +739,10 @@ GlassSurfaceDetector::detect(const cv::Mat& img_in, cv::Mat& img_out)
     cv::Mat ada_thresh;
     cv::adaptiveThreshold(img_gray, ada_thresh, 255, cv::ADAPTIVE_THRESH_MEAN_C,
         cv::THRESH_BINARY_INV, m_adapt_ksize, m_adapt_const);
-    cv::imwrite("/home/zzq/b9/temp/19.jpg", ada_thresh);
+    cv::imwrite("/home/zzq/b9/temp/thresh_img_gray.jpg", ada_thresh);
     cv::bitwise_and(ada_thresh, mask_glass_roi, ada_thresh);//主要在这里用到了detect_glass的结果，也就是
                                                             //mask_glass_roi
-    cv::imwrite("/home/zzq/b9/temp/21.jpg", ada_thresh);
+    cv::imwrite("/home/zzq/b9/temp/before_find_contours.jpg", ada_thresh);
 
     CONTOURS_TYPE contours;
     cv::findContours(ada_thresh, contours, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
@@ -792,12 +796,14 @@ GlassSurfaceDetector::detect(const cv::Mat& img_in, cv::Mat& img_out)
         int bigger = (w0 > h0 ? w0 : h0);
         cv::Mat roi;
         if (bigger < MIN_BBOX_HW)
-        {   //左上角，右下角各扩展8个像素
+        {   
+            //左上角，右下角各扩展8个像素
             int x0_new = (0 > (x0-MIN_BBOX_OFS) ? 0 : (x0-MIN_BBOX_OFS));
             int y0_new = (0 > (y0-MIN_BBOX_OFS) ? 0 : (y0-MIN_BBOX_OFS));
             int x1_new = ((img_w-1) < (x0+w0+MIN_BBOX_OFS) ? (img_w-1) : (x0+w0+MIN_BBOX_OFS));
             int y1_new = ((img_h-1) < (y0+h0+MIN_BBOX_OFS) ? (img_h-1) : (y0+h0+MIN_BBOX_OFS));
-            roi = img_in(cv::Rect(cv::Point(x0_new, y0_new), cv::Point(x1_new, y1_new)));
+            roi = img_gray(cv::Rect(cv::Point(x0_new, y0_new), cv::Point(x1_new, y1_new)));
+            cv::cvtColor(roi, roi, cv::COLOR_GRAY2BGR);
             // cv::imwrite("/home/zzq/b9/temp/22.jpg", roi);
             cv::Mat roi_resized;
             cv::resize(roi, roi_resized, cv::Size(MIN_BBOX_HW, MIN_BBOX_HW));
